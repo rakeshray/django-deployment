@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Access Records</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}" />
+  </head>
+  <body>
+      <h1> Here are your access record </h1>
+      <div class="djangotwo">
+          {% if access_record %}
+            <table>
+              <thead>
+                <th>Site Name</th>
+                <th>Date Accessed</th>
+              </thead>
+
+              {% for acc in access_record %}
+
+              <tr>
+                <td>  {{acc.name}} </td>
+                <td>  {{acc.date}} </td>
+              </tr>
+
+              {% endfor %}
+
+            </table>
+
+          {% else %}
+            <p> No Access Record found </p>
+          {% endif %}
+
+      </div>
+  </body>
+</html>

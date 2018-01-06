@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>RELATIVE URL TEMPLATE</h1>
+    <!-- <a href="basic_app/other.html"> OTHER PAGE</a> -->
+    <!--  Above will not work because this is not relative url representation
+        When above link is clicked it will call following in page domain/basicapp/relative/basic_app/other.html
+        current page is domain/basicapp/relative/ so on clicking the link basic_app/other.html will be added to it
+    -->
+    <a href="{% url 'basic_app:other' %}">OTHER PAGE</a>
+    <a href="{% url 'admin:index' %}">ADMIN PAGE</a>
+    <a href="{% url 'index' %}"> INDEX PAGE </a>
+  </body>
+</html>
